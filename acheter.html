@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Acheter - Aura Inc.</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  
+</head>
+<body>
+  <header>
+    <nav class="site-nav">
+      <a class="logo" href="index.html"><img src="images/pure logo final-02.png" alt="Pure"></a>
+      <div class="links" aria-hidden="true">
+        <a href="index.html">Accueil</a>
+        <a href="acheter.html?idx=1">Violette</a>
+        <a href="acheter.html?idx=2">Menthe</a>
+        <a href="#coffret">Coffret</a>
+      </div>
+      <div class="nav-right">
+        <a id="cart-link" class="cart-icon" href="#">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 6h15l-1.5 9h-11L6 6z" stroke="#222" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="9" cy="20" r="1" fill="#222" />
+            <circle cx="18" cy="20" r="1" fill="#222" />
+          </svg>
+          <span id="cart-count">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="buy-page">
+      <div class="page-wrap">
+        <a href="index.html" class="back-link">← Retour</a>
+        <div class="buy-grid">
+          <div class="buy-left">
+            <div class="card-media-wrap">
+              <div class="media-inner">
+                <model-viewer id="product-model" src="3d_model/canette_mimosa.glb" alt="Canette 3D" exposure="1.1" shadow-intensity="1" camera-orbit="0deg 90deg 300m" min-camera-orbit="-360deg 80deg 40m" max-camera-orbit="360deg 100deg 40m" ar ar-modes="webxr scene-viewer quick-look" camera-controls></model-viewer>
+                <!-- controls removed: auto-rotate and reset buttons intentionally omitted -->
+                <div id="rotate-hint" class="rotate-hint">Tournez la canette</div>
+              </div>
+            </div>
+            <div class="delivery-info">Livraison en 2-4 jours | Retours 14 jours</div>
+          </div>
+
+          <div class="buy-right">
+            <h1 id="product-title">Édition</h1>
+            <div class="price-row">
+              <div class="price" id="product-price">€99.00</div>
+            </div>
+            <p id="product-desc" class="note">Description</p>
+            <div id="product-long-desc" class="product-long-desc"></div>
+
+            <div class="controls-row">
+              <label class="qty-label">Quantité <input id="qty" class="qty" type="number" value="1" min="1" max="50"></label>
+            </div>
+
+            <div class="actions-row">
+              <button id="buy-now" class="primary-buy">Commander maintenant</button>
+              <button id="add-cart" class="secondary">Ajouter au panier</button>
+            </div>
+
+            <div class="result-row">
+              <div id="buy-result" class="note"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="col">
+        <div class="brand"><img src="images/pure logo final-02.png" alt="Aura"><div><strong>Aura Inc.</strong></div></div>
+      </div>
+      <div class="col">
+        <div class="links">
+          <a href="index.html">Accueil</a>
+          <a href="acheter.html?idx=1">Violette</a>
+          <a href="acheter.html?idx=2">Menthe</a>
+        </div>
+      </div>
+      <div class="col footer-col-narrow">
+        <div class="contact-title">Contact</div>
+        <small>Email: contact@aurainc.com</small>
+        <div class="footer-note-wrapper"><small>© 2025 Aura Inc. — Page fictive</small></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="acheter.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aura Inc – Collection Pureté</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<!-- style embarqué supprimé pour laisser le CSS externe agir -->
+</head>
+<body>
+	<nav class="navbar">
+		<div class="navbar-container">
+			<span class="navbar-logo"><img src="images/pure logo final-02.png" alt="Pure" class="logo-img"></span>
+			<ul class="navbar-links">
+				<li><a href="#">Accueil</a></li>
+				<li><a href="#carrousel">Éditions</a></li>
+				<li><a href="#experience">Expérience</a></li>
+				<li><a href="#coffret">Coffret</a></li>
+				<li><a href="#exclusive">Exclusivité</a></li>
+			</ul>
+
+			<div class="nav-actions">
+				<a id="cart-link" class="cart-icon" href="Partiel/acheter.html">
+				  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				    <path d="M6 6h15l-1.5 9h-11L6 6z" stroke="#222" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+				    <circle cx="9" cy="20" r="1" fill="#222" />
+				    <circle cx="18" cy="20" r="1" fill="#222" />
+				  </svg>
+									<span id="cart-count">0</span>
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Section 1 : Hero -->
+	<section class="hero">
+		<div class="hero-title">Essence Pure<br><span>Édition Mimosa</span></div>
+		<div class="hero-desc">Une quête dédiée à la clarté sensorielle.
+L’Édition Mimosa est issue d’un protocole rigoureux, visant la précision et la fidélité d’un profil floral délicat.</div>
+		<!-- Slideshow pour le hero (deux images) -->
+		<div class="hero-slideshow-wrap">
+			<div class="slideshow" id="hero-slideshow" aria-hidden="true">
+				<div class="slide active">
+					<img class="base" src="images/cannette_main_violette.png" alt="Canette Violette">
+					<img class="can-overlay" src="images/cannette_main_violette.png" alt="" aria-hidden="true">
+				</div>
+				<div class="slide">
+					<img class="base" src="images/cannette_main_menthe.png" alt="Canette Menthe">
+					<img class="can-overlay" src="images/cannette_main_menthe.png" alt="" aria-hidden="true">
+				</div>
+				<div class="slide">
+					<img class="base" src="images/cannette_main.png" alt="Canette Mimosa">
+					<img class="can-overlay" src="images/cannette_main.png" alt="" aria-hidden="true">
+					<div class="can-wipe" aria-hidden="true"></div>
+				</div>
+				<div class="slideshow-dots" id="hero-dots" aria-hidden="false">
+					<button class="dot active" data-index="0" aria-label="Slide 1"></button>
+					<button class="dot" data-index="1" aria-label="Slide 2"></button>
+					<button class="dot" data-index="2" aria-label="Slide 3"></button>
+				</div>
+			</div>
+		</div>
+		<div class="buy-btn-container">
+			<button class="buy-btn" id="scroll-to-carrousel">Découvrir la gamme</button>
+		</div>
+	</section>
+
+	<!-- Section 2 : Carrousel -->
+	<section id="carrousel">
+		<h2 class="carrousel-title">Catalogue d'éditions — profils vérifiés</h2>
+		<div class="edition-large">
+			<div class="edition-img-wrap">
+				<div class="model-stack">
+					<model-viewer id="canette3d-front" class="edition-img model-front" src="3d_model/canette_mimosa.glb" alt="Canette 3D" exposure="1.1" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look"></model-viewer>
+					<model-viewer id="canette3d-back" class="edition-img model-back" src="3d_model/canette_violette.glb" alt="Canette 3D" exposure="1.1" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look"></model-viewer>
+					<model-viewer id="canette3d-back" class="edition-img model-back" src="3d_model/canette_menthe.glb" alt="Canette 3D" exposure="1.1" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look"></model-viewer>
+				</div>
+				<div class="edition-img-gradient"></div>
+			</div>
+			<div class="edition-content">
+				<h3>Édition Mimosa</h3>
+				<div>
+					<a href="#acheter" class="experience-btn">Acquérir</a>
+				</div>
+				<p>Résultat d'une collecte méthodique et d'une mise en forme scientifique, cette édition révèle une structure sensorielle étudiée pour sa clarté et sa finesse.</p>
+			</div>
+			<button class="arrow-next">
+				<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 8L20 16L12 24" stroke="#bfa76a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+			</button>
+		</div>
+		
+	</section>
+
+
+	<!-- Section 3 : Expérience -->
+	<section class="section-experience" id="experience">
+		<div class="experience-container">
+			<div class="experience-img">
+				<div class="slideshow" id="experience-slideshow" aria-hidden="true">
+					<img src="images/ment_feuille.png" class="slide active" alt="Ment Feuille" />
+					<img src="images/mimosa_feuille.png" class="slide" alt="Mimosa Feuille" />
+					<img src="images/violette_feuille.png" class="slide" alt="Violette Feuille" />
+					<div class="gradient-wipe" aria-hidden="true"></div>
+					<div class="slideshow-dots" id="experience-dots" aria-hidden="false">
+						<button class="dot active" data-index="0" aria-label="Slide 1"></button>
+						<button class="dot" data-index="1" aria-label="Slide 2"></button>
+						<button class="dot" data-index="2" aria-label="Slide 3"></button>
+					</div>
+				</div>
+			</div>
+			<div class="experience-content">
+				<h2>Une expérience de précision</h2>
+				<p>Explorez des compositions restituées selon des protocoles de conservation rigoureux. Chaque interaction propose un relevé sensoriel pensé pour la clarté, la fidélité et l'observation attentive.<br><br>
+				Aura Inc. applique des méthodes éprouvées pour préserver l'intégrité des profils et soutenir une approche d'étude et d'appréciation.</p>
+				<a href="#acheter" class="experience-btn">En savoir plus</a>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Section 4 : Coffret Trio -->
+	<section class="section-coffret" id="coffret">
+		<div class="coffret-container">
+			<div class="coffret-img-gauche">
+				<img src="images/3_canettes.png" alt="Coffret 3 canettes Aura" />
+			</div>
+			<div class="coffret-content">
+				<h2>Coffret Prestige – Trio d'éditions</h2>
+				<p>Trois éditions réunies dans un coffret conçu pour préserver l'intégrité de chaque composition. Un ensemble pensé pour l'observateur exigeant et la collection raisonnée.<br><br>
+				Chaque édition présente un profil distinct, restitué selon des critères techniques et sensoriels stricts.</p>
+				<a href="#acheter" class="experience-btn">Commander le coffret</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 5 : Exclusivité  -->
+	<section class="section-exclusive" id="exclusive">
+		<div class="exclusive-container">
+			<div class="exclusive-content-text">
+				<h2>Offrez l'odeur d'un souvenir.</h2>
+				<a href="#acheter" class="experience-btn">Découvrir</a>
+			</div>
+			<div class="exclusive-spacer">&nbsp;</div>
+		</div>
+		<img src="images/coffret transparent HQ.png" alt="Coffret Exclusif" class="exclusive-image" />
+	</section>
+		
+	<!-- FOOTER -->
+	<footer class="footer">
+			<div class="footer-main">
+				<div class="footer-brand">
+					<img src="images/pure logo final-02.png" alt="Aura Inc." class="footer-logo">
+					<span class="footer-title">Aura Inc.</span>
+				</div>
+				<div class="footer-contact">
+					<span>Contact : <a href="mailto:contact@aurainc.com">contact@aurainc.com</a></span><br>
+					<span>Instagram : <a href="#">@aura.inc</a></span>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<span>© 2025 Aura Inc. – Recherche et clarté sensorielle.</span>
+				<span class="footer-note">Page fictive.</span>
+			</div>
+		</footer>
+
+	<!-- Librairie model-viewer et effets -->
+	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+	<script src="edition.js"></script>
+	<script src="scroll-effect.js"></script>
+	<div id="cart-overlay"></div>
+	<aside id="cart-drawer" aria-hidden="true">
+		<div class="cart-drawer-header">
+			<h2>Mon panier</h2>
+			<button id="cart-close" class="cart-close">✕</button>
+		</div>
+		<div id="cart-drawer-content"><p class="muted">Chargement...</p></div>
+	</aside>
+
+	<script src="index.js"></script>
+</body>
+</html>
