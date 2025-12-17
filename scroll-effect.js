@@ -1,4 +1,3 @@
-// Effet d'apparition fluide sur les sections au scroll (Intersection Observer)
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section, .footer');
     const observer = new window.IntersectionObserver((entries) => {
@@ -13,3 +12,4 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 });
+
