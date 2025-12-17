@@ -1,5 +1,4 @@
-// acheter.js — moved from inline script in acheter.html
-// Product data and page logic for acheter.html
+
 const products = [
   { id: 0, title: 'Édition Mimosa', model: '3d_model/canette_mimosa.glb', price: 99.00, desc: '', longDesc: `Édition Mimosa —\n\nCette édition incarne la recherche d'une expression florale pure : sélection des matières premières, extraction maîtrisée et montage olfactif pensé pour la transparence et la finesse. Notes de tête lumineuses s'ouvrent sur un coeur floral délicat, soutenu par une structure sèche et nette qui prolonge la lisibilité du parfum.` },
   { id: 1, title: 'Édition Violette', model: '3d_model/canette_violette.glb', price: 99.00, desc: 'Une profondeur florale maîtrisée.', longDesc: `Édition Violette — Une profondeur florale maîtrisée.\n\nRiche et nuancée, cette édition explore les facettes veloutées de la violette. Le profil se développe en couches progressives : végétal, poudré, puis résolument floral. Conçue pour l'observation attentive, la Violette offre une présence définie sans lourdeur.` },
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const idx = (!isNaN(idxParam) && idxParam >= 0 && idxParam < products.length) ? idxParam : 0;
   const p = products[idx];
 
-  // adjust nav links for special behavior
+ 
   if (idx === 1 || idx === 2) {
     const sel = `a[href="acheter.html?idx=${idx}"], a[href$="acheter.html?idx=${idx}"]`;
     document.querySelectorAll(sel).forEach(a => {
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // bind UI
+ 
   const modelViewer = q('#product-model');
   if (modelViewer && p.model) {
     modelViewer.setAttribute('src', p.model);
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const longDescEl = q('#product-long-desc'); if (longDescEl) longDescEl.textContent = (p.longDesc || p.desc).replace(/\n\n/g, '\n\n');
   q('#product-price').textContent = '€' + p.price.toFixed(2);
 
-  // model viewer pointer feedback
   if (modelViewer) {
     modelViewer.addEventListener('pointerdown', () => { modelViewer.style.cursor = 'grabbing'; });
     document.addEventListener('pointerup', () => { modelViewer.style.cursor = 'grab'; });
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   qtyEl.addEventListener('input', () => { if(buyResult) buyResult.textContent = ''; computeTotal(); });
 
-  // cart helpers
   const CART_KEY = 'aura_cart';
   function getCart(){ try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch(e){ return []; } }
   function saveCart(cart){ try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch(e){} }
@@ -60,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try { window.addEventListener('storage', (e) => { if (e.key === CART_KEY) updateCartLinkCount(); }); } catch(e) {}
   document.addEventListener('visibilitychange', () => { if (!document.hidden) updateCartLinkCount(); });
 
-  // in-page cart drawer (construct elements)
+  
   (function(){
     const productMap = { '0': { title: 'Édition Mimosa', price: 99.00 }, '1': { title: 'Édition Violette', price: 99.00 }, '2': { title: 'Édition Menthe', price: 99.00 }, 'coffret': { title: 'Coffret Prestige – Trio', price: 69.99 } };
     const overlay = document.createElement('div'); overlay.id = 'cart-overlay';
@@ -98,3 +95,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
