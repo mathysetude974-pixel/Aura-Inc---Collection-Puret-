@@ -1,4 +1,3 @@
-// index.js — moved from inline scripts in index.html
 (function(){
   const CART_KEY = 'aura_cart';
   function getCart(){ try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch(e){ return []; } }
@@ -8,7 +7,6 @@
   function updateCartLink(){ const badge = document.getElementById('cart-count'); if(!badge) return; const n = getCart().reduce((s,i)=>s+(i.qty||0),0); badge.textContent = n; badge.style.display = n? 'inline-flex':'none'; }
 
   document.addEventListener('DOMContentLoaded', function(){
-    // Smooth scroll for navbar anchor links
     document.querySelectorAll('.navbar-links a[href^="#"]').forEach(function(link) {
       link.addEventListener('click', function(e) {
         var href = this.getAttribute('href');
@@ -25,7 +23,6 @@
         }
       });
     });
-    // "Découvrir la gamme" button
     var btn = document.getElementById('scroll-to-carrousel');
     if (btn) {
       btn.addEventListener('click', function(e) {
@@ -34,11 +31,8 @@
         if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     }
-
-    // initial badge update
     updateCartLink();
 
-    /* CART DRAWER */
     const productMap = { '0': { title: 'Édition Mimosa', price: 24.99 }, '1': { title: 'Édition Violette', price: 24.99 }, '2': { title: 'Édition Menthe', price: 24.99 }, 'coffret': { title: 'Coffret Prestige – Trio', price: 69.99 } };
     const overlay = document.getElementById('cart-overlay');
     const drawer = document.getElementById('cart-drawer');
@@ -56,7 +50,7 @@
         rows += `<tr><td>${meta.title}</td><td>${qty}</td><td>${formatMoney(meta.price||0)}</td><td>${formatMoney(sub)}</td></tr>`;
       });
       content.innerHTML = `<table><thead><tr><th>Article</th><th>Qté</th><th>PU</th><th>Sous-total</th></tr></thead><tbody>${rows}</tbody></table><p class="total">Total : ${formatMoney(grand)}</p><div class="drawer-actions"><button id="drawer-checkout">Commander</button><button id="drawer-clear" class="drawer-clear">Vider le panier</button></div>`;
-      // attach handlers
+      
       try{
         document.getElementById('drawer-clear').addEventListener('click', ()=>{ setCart([]); renderDrawer(); updateCartLink(); });
         document.getElementById('drawer-checkout').addEventListener('click', ()=>{ alert('Commande effectuée — merci !'); setCart([]); renderDrawer(); updateCartLink(); });
@@ -70,10 +64,10 @@
     if(overlay) overlay.addEventListener('click', closeDrawer);
     if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
 
-  }); // DOMContentLoaded
+  }); 
 
-  // cross-tab / visibility updates
   window.addEventListener('storage', function(e){ if(e.key === CART_KEY) updateCartLink(); });
   document.addEventListener('visibilitychange', function(){ if(!document.hidden) updateCartLink(); });
 
 })();
+
