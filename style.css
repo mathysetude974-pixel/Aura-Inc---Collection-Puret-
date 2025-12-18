@@ -1084,19 +1084,16 @@ body { background: #f7f5f3; }
   .nav-actions {
     position: absolute;
     left: 12px;
-    top: 52%;
+    top: 75%;
     transform: translateY(-50%);
     z-index: 210;
   }
   .navbar-logo {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    top: 10%;
-    transform-origin: center;
-    z-index: 215;
-    display: flex;
-    align-items: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 220;
   }
   #cart-count { right: -10px; }
 }
