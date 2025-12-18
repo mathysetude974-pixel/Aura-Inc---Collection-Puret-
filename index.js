@@ -33,6 +33,7 @@
     }
     updateCartLink();
 
+    // Mobile navbar toggle
     const navToggle = document.getElementById('nav-toggle');
     const navLinksEl = document.getElementById('navbar-links');
     if (navToggle && navLinksEl) {
@@ -54,11 +55,13 @@
         });
       });
 
+      // close when clicking outside
       document.addEventListener('click', function(e){
         if (!navLinksEl.classList.contains('show')) return;
         if (!navLinksEl.contains(e.target) && !navToggle.contains(e.target)) closeNav();
       });
 
+      // close on resize to desktop
       window.addEventListener('resize', function(){ if (window.innerWidth > 700) closeNav(); });
     }
 
@@ -99,5 +102,3 @@
   document.addEventListener('visibilitychange', function(){ if(!document.hidden) updateCartLink(); });
 
 })();
-
-
