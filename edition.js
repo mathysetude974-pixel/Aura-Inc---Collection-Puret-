@@ -1,7 +1,7 @@
 const editions = [
   {
     title: "Édition Mimosa",
-    desc: "Une pureté lumineuse, réservée aux connaisseurs.<br>Une expérience de luxe, un souffle d’exception.",
+    desc: "Une lumière douce et équilibrée.<br>Clarté printanière et harmonie sensorielle.",
     img: "images/cannette_main.png",
     imgStyle: "",
     model: "3d_model/canette_mimosa.glb",
@@ -9,7 +9,7 @@ const editions = [
   },
   {
     title: "Édition Violette",
-    desc: "Une profondeur florale maîtrisée.<br>Fraîcheur feutrée et pureté raffinée.",
+    desc: "Une atmosphère feutrée et maîtrisée.<br>Profondeur calme et équilibre sensoriel.",
     img: "images/cannette_main.png",
     imgStyle: "filter:grayscale(0.7);",
     model: "3d_model/canette_violette.glb",
@@ -17,7 +17,7 @@ const editions = [
   },
   {
     title: "Édition Menthe",
-    desc: "Un souffle d’une grande fraîcheur.<br>Clarté végétale et précision sensorielle.",
+    desc: "Une lumière douce et équilibrée.<br>Clarté printanière et harmonie sensorielle.",
     img: "images/cannette_main.png",
     imgStyle: "filter:hue-rotate(60deg);",
     model: "3d_model/canette_menthe.glb",
@@ -485,3 +485,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
