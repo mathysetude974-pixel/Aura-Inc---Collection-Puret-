@@ -330,18 +330,18 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const heroTexts = [
       {
-        title: 'Essence Pure<br><span style="color:#9f5edc;">Édition Violette</span>',
-        desc: 'Une profondeur florale maîtrisée. Fraîcheur feutrée et pureté raffinée.',
+        title: 'Saveurs exclusives<br><span style="color:#9f5edc;">Édition Violette</span>',
+        desc: 'Une atmosphère feutrée et maîtrisée. Profondeur calme et équilibre sensoriel.',
         color: '#9f5edc'
       },
       {
-        title: 'Essence Pure<br><span style="color:#66bfa0;">Édition Menthe</span>',
+        title: 'Saveurs exclusives<br><span style="color:#66bfa0;">Édition Menthe</span>',
         desc: 'Un souffle d’une grande fraîcheur. Clarté végétale et précision sensorielle.',
         color: '#66bfa0'
       },
       {
-        title: 'Essence Pure<br><span style="color:#bfa76a;">Édition Mimosa</span>',
-        desc: 'Une quête dédiée à la clarté sensorielle. L\'Édition Mimosa vise la précision et la fidélité d\'un profil floral délicat.',
+        title: 'Saveurs exclusives<br><span style="color:#bfa76a;">Édition Mimosa</span>',
+        desc: 'Une lumière douce et équilibrée. Clarté printanière et harmonie sensorielle.',
         color: '#bfa76a'
       }
     ];
@@ -485,4 +485,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
 
