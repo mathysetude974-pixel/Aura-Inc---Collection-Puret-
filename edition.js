@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
           btn.style.transition = 'background 0.25s ease, color 0.25s ease';
           btn.style.background = t.color;
           try {
-            if (idx === 2 || (t.title && t.title.includes('Mimosa'))) {
+            if (idx === 2 || (t.title && (t.title.includes('Mimosa') || t.title.includes('Menthe')))) {
               btn.style.color = '#fff';
             } else {
               btn.style.color = getContrastColor(t.color);
@@ -485,6 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
 
 
 
